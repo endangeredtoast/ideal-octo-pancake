@@ -13,7 +13,8 @@ services:
       - MYSQL_USER=${MYSQL_USER}
 
   app:
-    image: nextcloud:fpm
+    #image: nextcloud:fpm #Optionally use the official docker image instead of building the full image.
+    build: .
     restart: always
     links:
       - db
